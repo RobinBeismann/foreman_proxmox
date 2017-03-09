@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  match 'proxmox', to: 'foreman_proxmox/proxmoxservers#index'
-
+  get 'proxmox', to: 'foreman_proxmox/proxmoxservers#index', via: [:get, :post]
 end
 
 ForemanProxmox::Engine.routes.draw do
