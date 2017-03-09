@@ -15,7 +15,7 @@ module ForemanProxmox
 
     # Add any db migrations
     initializer 'foreman_proxmox.load_app_instance_data' do |app|
-      app.config.paths['db/migrate'] += ForemanProxmox::Engine.paths['db/migrate'].existent
+      app.config.paths['db/migrate'] = ForemanProxmox::Engine.paths['db/migrate'].existent
     end
 
     initializer 'foreman_proxmox.register_plugin', after: :finisher_hook do |_app|
